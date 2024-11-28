@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const { Client, GatewayIntentBits } = require('discord.js');
+const eventHandler = require('./handlers/eventHandler');
 dotenv.config();
 
 const app = express();
@@ -20,9 +21,7 @@ const client = new Client({
   ],
 });
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}`);
-});
+eventHandler(client)
 
 // Function to convert milliseconds to a human-readable format
 const formatUptime = (uptimeMs) => {
