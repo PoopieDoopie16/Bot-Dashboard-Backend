@@ -4,6 +4,7 @@ const cors = require('cors');
 const { Client, GatewayIntentBits } = require('discord.js');
 const eventHandler = require('./handlers/eventHandler');
 dotenv.config();
+const keep_alive = require('./keep_alive')
 
 const app = express();
 app.use(express.json());
