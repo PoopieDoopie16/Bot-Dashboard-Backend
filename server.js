@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: 'http://localhost:3000', // Allow React app running on localhost:3000
+  origin: 'https://bot-dashboard-frontend.onrender.com', // Allow React app running on localhost:3000
 }));
 
 // Initialize the Discord bot client
